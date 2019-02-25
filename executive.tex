@@ -2,30 +2,16 @@
 \usepackage[margin=1.0in]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage[nottoc,numbib]{tocbibind}
-%\usepackage[backend=biber,sorting=none]{biblatex}
 \usepackage{siunitx}
-\usepackage{pgfgantt}
 \usepackage{tabularx}
-\usepackage{rotating}
-%\usepackage{xcolor, colortbl}
 \usepackage{enumitem}
-\usepackage{setspace}
-\usepackage{wrapfig}
-\usepackage[acronyms,toc,nonumberlist]{glossaries}
-\usepackage{booktabs}
 \usepackage[hidelinks]{hyperref}
 \usepackage{blindtext}
 \usepackage{setspace}
 \usepackage{footnote}
 
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
 \makesavenoteenv{tabular}
-\renewcommand{\acronymname}{Nomenclature}
-%\addbibresource{final_report.bib}
-\makenoidxglossaries
-\glsnoexpandfields
-\loadglsentries{gloss.tex}
 
 \title{
   AERSP 401B \\
@@ -157,6 +143,13 @@ helium tanks.
 cm polyethylene radiation shield lining the walls. The 60 gallon water
 supply tank will be place in the nose cone to also partially protect
 against radiation.
+
+\textbf{Command \& Data Handling} - The flight computer will run
+VxWorks and consist of three BAE RAD5545 processors along with two
+SWRI solid state recorders for storing mission data. Redundancy is
+crucial for this subsystem to minimize the risk of hardware failure,
+and the use of components with sufficient quality assurance
+documentation reduces development and maintenance costs.
 
 \textbf{Ground Control} - Mission control will be shared between the Lunar
 Gateway and the Lyndon B. Johnson Space Center. The Lunar Gateway will
