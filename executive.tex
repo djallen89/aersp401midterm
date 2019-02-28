@@ -155,8 +155,8 @@ documentation reduces development and maintenance costs.
 Gateway and the Lyndon B. Johnson Space Center. The Lunar Gateway will
 be the primary SOCC and POCC.
 
-\textbf{Communication} - The communication system has been changed to use only
-S/X-Band antennae. UHF was originally going to be used for
+\textbf{Communication} - The communication system has been changed to
+use only S/X-Band antennae. UHF was originally going to be used for
 communications between the LSAV and the Lunar Gateway, but this ended
 up being too low frequency for the 80,000 km distance between the
 Gateway and the LSAV. The same set of two S-Band antennae will be used
@@ -165,31 +165,15 @@ transmit and receive data to and from the Lunar Gateway. Additionally,
 a half meter parabolic X-band antenna will be used to transmit data to
 the NEN.
 
-The power requirements for the communications system has changed with
-the removal of the UHF antennae as well. When transmitting data to the
-NEN will require 40 W of power for a data rate of 5 mbps, and
-transmitting to the Lunar Gateway will require 24 W of power for a
-data rate of 512 kbps. Additionally, the LSAV will be capable of
-receiving 128 kbps of data on both the X-band and S-band antennae,
-while consuming a total of 10 W of power.
-
-The 5 mbps of data transmitted to the NEN will be sufficient for
-mission data, such as life support and possibly video feeds. When the
-LSAV is not in view of the NEN, the 512 kbps of data transmitted to
-the Lunar Gateway should be sufficient for basic mission data and
-telemetry. The 128 kbps of data the LSAV can receive will be
-sufficient for any commands that need to be sent. Note that the data
-rate for receiving data from the Lunar Gateway assumes a range of
-80,000 km, which is the absolute farthest the two will be from each
-other while in operation. At a closer range of approximate 1000 km,
-the LSAV will easily be capable of receiving upwards of 10 mbps from
-the Gateway.
-
-Finally, BPSK was chosen as the modulation scheme for all
-communications. BPSK is chosen because practically all NEN ground
-stations are capable of using it. BPSK requires higher \(\frac{E_b}{N_o}\)
-compared to other modulation schemes, but its universality makes up
-for this.
+Total power requirements for the communications subsystem have been
+reduced to 64 W, while capable of transmitting 5.5 mbps of data, and
+receiving 128 kbps. This should be sufficient for receiving commands,
+and sending missions informations and telemetry. More information can
+be found in the link budgets in tables X. Finally, BPSK was chosen as
+the modulation scheme for all communications. BPSK is chosen because
+practically all NEN ground stations are capable of using it. BPSK
+requires higher \(\frac{E_b}{N_o}\) compared to other modulation
+schemes, but its universality makes up for this.
 
 \textbf{Guidance, Navigation and Control} - The attitude of the LSAV
 will be adjusted by a set of MR-107V engines using
