@@ -33,9 +33,9 @@
   TEAM SELENE SUPPLY \\
   \begin{tabular}{l r}
     Team Leader: & Nicholas \textsc{Pytel} \\
-    Gracie \textsc{Ryan} & Dominick \textsc{Allen} \\
-    Robert \textsc{Bond} & Tyler \textsc{Meehan} \\
-    Adalberto \textsc{Morales} & Michael \textsc{Croydon} \\
+    Robert \textsc{Bond} & Dominick \textsc{Allen} \\
+    Michael \textsc{Croydon}  & Tyler \textsc{Meehan} \\
+    Adalberto \textsc{Morales}\\
   \end{tabular}
 
   \hspace{1cm} \newline
@@ -49,7 +49,7 @@
 
 \newpage
 
-\section{Motivation/mission purpose}
+\section{Motivation}
 
 The reusable Lunar Surface Access Vehicle (LSAV) has the primary
 purpose of providing transportation means between the Lunar Gateway
@@ -59,7 +59,7 @@ future Lunar missions and base operations by carrying both crew and
 cargo too and from the surface of the moon. The mission will prove the
 viability of the Lunar Gateway as a platform for future missions
 
-\section{Mission Objectives  requirements, constraints}
+\section{Mission Objectives}
 
 In order to support lunar missions, the LSAV must satisfy the
 following requirements: Must transport either crew or cargo to the
@@ -108,16 +108,15 @@ missions outside the scope of this mission.
 
 \begin{table}
   \centering
-  \caption{foo}
+  \caption{System Budgets}
   \label{table:foo}
-  \begin{tabular}{ccc}
-    Mass (metric ton) & Power (kWhr) & Cost (USD) \\
+  \begin{tabular}{lll}
+    Mass (metric tons) & Power (kWhr) & Cost (USD) \\ \hline
     50 (230 wet) & 1388 & 8.1 Billion \\
   \end{tabular}
 \end{table}
 
-\section{Requirements / Derived  requirements / Sequence
-  of events}
+\section{Requirements and Constraints}
 
 LSAV Launches from Cape Canaveral and is injected into LEO System
 checkouts occur while Starship is refueled over the course of a week
@@ -131,18 +130,38 @@ from surface with crew and return cargo LSAV rendezvous with lunar
 gateway, crew and cargo depart and vehicles is refueled.  System
 checks occur over the course of 2 weeks and any maintenance required
 is completed.  Vehicle launches for next mission.  Cycle repeats for
-either 30 missions or 5 years System architecture, cartoon Mass, Cost,
-Power stuff Subsystems
+either 30 missions or 5 years System architecture.
+
+\section{System Descriptions}
+
+\textbf{Structure} - The wireframe structure of LSAV will be made with
+304 stainless steel tubes.  This tubing will also serve to mount the
+propellant tanks and the engine.  The wireframe will be enclosed by
+highly polished aluminum 6061 T6 16 gauge sheet metal which serves to
+protect the insides of the vehicle but also to house the multi-layer
+insulation, thermal fluid loops, wiring, and radiation shielding.
+
+The 4 landing legs will be made with high strength carbon fiber
+prepreg (symmetric twill pattern) with 350 degree Fahrenheit high
+impact resistant resin.  304 stainless steel tube will make up the
+components of the spring damper system and also encase the aluminum
+honeycomb structure.
+
+LSAV will be boarded and deboarded through the International Berthing
+and Docking Mechanism while the cargo will be loaded through a
+seperate cargo bay door.  Other mechanisms include extending and
+retracting the solar panels and electric motor deployment of the
+landing gear.
 
 \textbf{Propulsion} - The tank pressurization system will use gaseous methane
 and oxygen to feed the liquid propellent to the raptor engine. This
 system will reduce the cost per mission by omitting the need for
 helium tanks.
 
-\textbf{ECLSS} - The crew will be housed in the front of the spacecraft with a 6
-cm polyethylene radiation shield lining the walls. The 60 gallon water
-supply tank will be place in the nose cone to also partially protect
-against radiation.
+\textbf{ECLSS} - The crew will be housed in the front of the
+spacecraft with a 6 cm polyethylene radiation shield lining the
+walls. The 60 gallon water supply tank will be place in the nose cone
+to also partially protect against radiation. 
 
 \textbf{Command \& Data Handling} - The flight computer will run
 VxWorks and consist of three BAE RAD5545 processors along with two
@@ -151,9 +170,14 @@ crucial for this subsystem to minimize the risk of hardware failure,
 and the use of components with sufficient quality assurance
 documentation reduces development and maintenance costs.
 
-\textbf{Ground Control} - Mission control will be shared between the Lunar
-Gateway and the Lyndon B. Johnson Space Center. The Lunar Gateway will
-be the primary SOCC and POCC.
+\textbf{Ground Control} - Before the LSAV has docked with the Lunar
+Gateway, mission control will be at the Lyndon B. Johnson Space
+Center. After docking, mission control will primarily be done at the
+Lunar Gateway. The Lunar Gateway will be the primary SOCC and
+POCC. The software for the various centers will custom packages that
+use a mixture of existing open source and proprietary software, and
+software developed in-house. Ground Control recievers will be
+colocated with the Lunar Gateway's recievers.
 
 \textbf{Communication} - The communication system has been changed to
 use only S/X-Band antennae. UHF was originally going to be used for
@@ -179,9 +203,10 @@ schemes, but its universality makes up for this.
 will be adjusted by a set of MR-107V engines using
 hydrazine. Attitude, position, and velocity will be determined by sun
 sensors, star sensors, and IMUs that are Kalman filtered by radiation
-hardened RAD5545 computers. During docking, LIDAR will be used to fine
-tune the approach to the International Berthing and Docking Mechanism
-on the LSAV.
+hardened RAD5545 computers. The software used to perform this will be
+developed in house. During docking, LIDAR will be used to fine-tune
+the approach to the International Berthing and Docking Mechanism on
+the LSAV.
 
 \textbf{Power} - The four battery banks will have their own charge
 controller/monitors capable of independent operation. This will
@@ -233,15 +258,36 @@ the ship at landing.
 
 
 \newpage
+
 \section{Appendix}
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Reasonable assumptions were made for the Gateway's power
-    and communications capabilities.}
+  \caption{Subsystem Costs}
+  \begin{tabular}{p{2in}r} 
+    Subsystem Cost & Estimate (Millions of USD) \\ \hline
+    Launch Vehicle & 200 \\
+    Propulsion & 400 \\
+    Ground Control & 100 \\
+    Structures & 600 \\
+    Communications & 10 \\
+    C\&DH & 100 \\
+    GNC & 200 \\
+    Power & 120 \\
+    Thermal & 40 \\
+    Payload & 30 \\
+    ECLSS & 800 \\ \hline
+    Integration, Integration Testing \& Qualification & 5500 \\ \hline
+    Total & 8100 \\
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Link Budget for LSAV to Gateway}
   \label{table:linkbudgetlsav}
   \begin{tabular}{lrr}
-    {} & LSAV to Gateway &Gateway to LSAV \\
+    {} & LSAV to Gateway &Gateway to LSAV \\ \hline
 
     Transmit Power (P)&24 W&45W \\
 
@@ -260,25 +306,98 @@ the ship at landing.
   \end{tabular}
 \end{table}
 
-\begin{tabular}{lrr}
-  &LSAV to NEN&NEN to LSAV \\
-  Transmit Power (P)&40 W&200 W \\
-  Line  Loss \((L_l)\)&-1 dB&-1 dB \\
-  Net Transmit Gain* \((G_t)\)&29.5 dB&44.8 dB \\
-  Space Loss \((L_s)\)&-224.9 dB&-212.9 dB \\
-  Path Loss \((L_a)\)&-1 dB&-1 dB \\
-  Receiving Gain \((G_r)\)&61.7 dB&30 dB \\
-  System Temperature Noise \((T_s)\)&27.9 dB&27.9 dB \\
-  Data Rate (R)&5 mbps&128 kbps \\
-  Implementation Loss \((L_i)\)&-2 dB&-2 dB \\
-  Estimated \(\frac{E_b}{N_o}\)&12 dB&30.6 dB \\
-  Required \(\frac{E_b}{N_o}\)&8.5 dB&10 dB \\
-  Link Margin&3.5 dB&20.6 dB \\
-\end{tabular}
+\begin{table}[H]
+  \centering
+  \caption{Link Budget for LSAV to NEN}
+  \begin{tabular}{lrr}
+    &LSAV to NEN&NEN to LSAV \\ \hline 
+    Transmit Power (P)&40 W&200 W \\
+    Line  Loss \((L_l)\)&-1 dB&-1 dB \\
+    Net Transmit Gain* \((G_t)\)&29.5 dB&44.8 dB \\
+    Space Loss \((L_s)\)&-224.9 dB&-212.9 dB \\
+    Path Loss \((L_a)\)&-1 dB&-1 dB \\
+    Receiving Gain \((G_r)\)&61.7 dB&30 dB \\
+    System Temperature Noise \((T_s)\)&27.9 dB&27.9 dB \\
+    Data Rate (R)&5 mbps&128 kbps \\
+    Implementation Loss \((L_i)\)&-2 dB&-2 dB \\
+    Estimated \(\frac{E_b}{N_o}\)&12 dB&30.6 dB \\
+    Required \(\frac{E_b}{N_o}\)&8.5 dB&10 dB \\
+    Link Margin&3.5 dB&20.6 dB \\
+  \end{tabular}
+\end{table}
 
+\begin{table}[H]
+  \centering
+  \caption{Table of subsystem mass}
+  \label{table:mass_summary}
+  \begin{tabular}{lr} \hline
+    Subsystem & Mass (kg) \\ 
+    Structure & 15,000 \\ 
+    Launch Vehicle & N.A. \\ 
+    Propulsion & 177500 \\
+    Ground Control & N.A. \\
+    Communications & 25 \\
+    C\&DH & 100 \\
+    GNC & 260 \\
+    Power & 3850\\
+    Thermal & 1000 \\
+    ECLSS & 3500 \\ 
+    Total & 201000 \\ 
+  \end{tabular}
+\end{table}
 
-Mass, power tables, link budget Subsystem costs Supplementary
-subsystem info
+The volume estimate table provides a rough estimate of the total
+volume each subsystem will use on the LSAV. The structure subsystem
+volume includes the cargo bay.
+
+\begin{table}[H]
+  \centering
+  \caption{Table of subsystem volume}
+  \label{table:volume_summary}
+  \begin{tabular}{lr} \hline
+    Subsystem & Volume ($m^3$) \\ 
+    Structure & 800 \\ 
+    Launch Vehicle & N.A. \\ 
+    Propulsion & 200 \\
+    Ground Control & N.A. \\
+    Communications & 1 \\
+    C\&DH & 1 \\
+    GNC & 1 \\
+    Power & 3 \\
+    Thermal & 6 \\
+    ECLSS & 75 \\  
+  \end{tabular}
+\end{table}
+
+The subsystem power chart breaks down the max instantaneous power
+consumption rate of each subsystem. Some subsystems, such as ECLSS and
+Thermal, will have a relatively consistent power consumption rate
+while others, such as Payload and Propulsion, will be intermittent and
+likely use very little of the available energy in the batteries. The
+total energy estimate was based on the worst case scenario of max
+power consumption from each subsystem for a total of 36 hours.
+
+\begin{table}[H]
+  \centering
+  \caption{Table of subsystem power}
+  \label{table:P}
+  \begin{tabular}{p{2in}r} 
+    Subsystem & Power (kw) \\ \hline
+    Structure & 2 \\ 
+    Launch Vehicle & N.A. \\
+    Propulsion & 1 \\
+    Thermal & 5.50 \\
+    GNC & .2 \\
+    Payload & 1 \\
+    C\&DH & .200 \\
+    Structures \& Mechanisms & 2 kW \\
+    Ground Control & N.A. \\
+    Launch Vehicle & N.A. \\ \hline
+    Maximum Instantaneous Power Consumption & 12.4 kW \\ \hline
+    Total Energy Required & 1380 kWh \\ 
+  \end{tabular}
+\end{table}
+
 
 Power
 
@@ -302,17 +421,14 @@ during missions (if needed).
 
 Structures and Mechanical Systems
 
+\textbf{Ground Control} - The decision to use a mixture of existing
+proprietary and open source software in addition to new in-house
+software was made on the basis that although many solutions exist,
+some new code will have to be developed to handle situations that are
+particular to the LSAV.
 
-
-\section{Motivation}
-  % \input{abstract.tex}
-\blindtext
-
-\section{Mission Objectives}
-\blindtext
-
-\section{Requirements}
-\blindtext
-
+\textbf{GNC} - The decision to use in-house developed software was
+made on the basis that integrating the software for the sensor suites
+and controlling the thrusters will be a unique challenge. 
 
 \end{document}
